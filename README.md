@@ -14,9 +14,50 @@ Up to 2024-11-26, the laste firmware version:
 
 ## Installation
 
+Ubuntu:
+
 ```
+sudo apt update
+sudo apt upgrade
+sudo apt-get install build-essential make pkg-config git
+
+git clone https://github.com/sol-prog/wch-openocd.git
+cd wch-opencd
+
 ./bootstrap
-./configure --prefix=/opt/wch-openocd --enable-wlinke --disable-ch347 --disable-linuxgpiod --disable-werror --program-prefix=wch-
+
+./configure \
+  --prefix=/opt/wch-openocd \
+  --enable-wlinke \
+  --disable-ch347 \
+  --disable-linuxgpiod \
+  --disable-werror \
+  --program-prefix=wch-
+
+make
+sudo make install
+```
+
+macOS:
+
+```
+brew install autoconf automake libtool pkg-config texinfo libusb
+brew install jimtcl
+
+git clone https://github.com/sol-prog/wch-openocd.git
+cd wch-opencd
+
+./bootstrap
+
+./configure \
+  --prefix=/opt/wch-openocd \
+  --enable-wlinke \
+  --disable-ch347 \
+  --disable-linuxgpiod \
+  --disable-internal-jimtcl \
+  --disable-werror \
+  --program-prefix=wch-
+
 make
 sudo make install
 ```
