@@ -22,7 +22,7 @@ sudo apt upgrade
 sudo apt-get install build-essential make pkg-config git
 
 git clone https://github.com/sol-prog/wch-openocd.git
-cd wch-opencd
+cd wch-openocd
 
 ./bootstrap
 
@@ -45,7 +45,7 @@ brew install autoconf automake libtool pkg-config texinfo libusb
 brew install jimtcl
 
 git clone https://github.com/sol-prog/wch-openocd.git
-cd wch-opencd
+cd wch-openocd
 
 ./bootstrap
 
