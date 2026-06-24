@@ -49,6 +49,8 @@ cd wch-opencd
 
 ./bootstrap
 
+CPPFLAGS="-I/opt/homebrew/include" \
+LDFLAGS="-L/opt/homebrew/lib" \
 ./configure \
   --prefix=/opt/wch-openocd \
   --enable-wlinke \
