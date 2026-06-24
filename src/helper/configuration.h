@@ -21,6 +21,7 @@
 
 #ifndef OPENOCD_HELPER_CONFIGURATION_H
 #define OPENOCD_HELPER_CONFIGURATION_H
+#include <stdio.h>
 
 #include <helper/command.h>
 

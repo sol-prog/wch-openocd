@@ -25,6 +25,7 @@
 #ifndef OPENOCD_HELPER_LOG_H
 #define OPENOCD_HELPER_LOG_H
 
+#include <stdio.h>
 #include <helper/command.h>
 
 /* To achieve C99 printf compatibility in MinGW, gnu_printf should be

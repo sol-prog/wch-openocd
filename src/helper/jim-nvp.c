@@ -43,6 +43,7 @@
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
+#include <stdio.h>
 #endif
 
 #include "jim-nvp.h"
