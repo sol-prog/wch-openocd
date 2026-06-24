@@ -14,12 +14,12 @@ Up to 2024-11-26, the laste firmware version:
 
 ## Installation
 
-Ubuntu:
+### Ubuntu:
 
 ```
 sudo apt update
 sudo apt upgrade
-sudo apt-get install build-essential make pkg-config git
+sudo apt-get install build-essential make pkg-config git libtool libusb-1.0-0-dev tcl
 
 git clone https://github.com/sol-prog/wch-openocd.git
 cd wch-openocd
@@ -38,7 +38,33 @@ make
 sudo make install
 ```
 
-macOS:
+On Linux you will want to add some udev rules if you don't want to use *sudo* every time when you run *wch-openocd*. Here is an example:
+
+```
+sudo nano /etc/udev/rules.d/50-wch-link.rules
+```
+
+add this text:
+
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="8010", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="8012", MODE="0666"
+```
+
+Save the file. Reload the udev rules:
+
+```
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+Disconnect and reconnect the device.
+
+### Windows:
+
+Use WSL2! You can follow the same steps as for Ubuntu. You just need to make sure that you passs the USB device to WSL (e.g. by using usbipd-win). 
+
+### macOS:
 
 ```
 brew install autoconf automake libtool pkg-config texinfo libusb
